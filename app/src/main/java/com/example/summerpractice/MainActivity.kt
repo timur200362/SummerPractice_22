@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             val weight = findViewById<EditText>(R.id.weight).text.toString().toFloat()
             val age  = findViewById<EditText>(R.id.age).text.toString().toInt()
             val res=findViewById<TextView>(R.id.result)
-            if(name.length<0 || name.length>50 || height<0 || height>250 || weight<0 || weight>250 || age<0 || age<150){
+            if(name.length<0 || name.length>50 || height<0 || height>250 || weight<0 || weight>250 || age<0 || age>150){
                 res.text="Данные введены некорректно"
             }
             else{
