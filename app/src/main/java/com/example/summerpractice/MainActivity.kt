@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             }
             else{
 
-                var result=(weight/2+name.length+height-100+age)
+                var result=((height*5)-(age*6.8)+(weight*13.7)+66)
                 res.text="$name Ваша норма каллорий:$result"
                 //Qм = ( рост в см х 5) - ( возраст в годах х 6,8) +( вес тела в кг х13,7) + 66 , где Qм -количество суточной нормы калорий
             }
