@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             else{
 
                 val result=(height*5)-(age*6.8)+(weight*13.7)+66
-                res.text="$name Ваша норма каллорий:$result"
+                res.text="$name Ваша норма каллорий:$result кг"
                 //Qм = ( рост в см х 5) - ( возраст в годах х 6,8) +( вес тела в кг х13,7) + 66 , где Qм -количество суточной нормы калорий
             }
         }
