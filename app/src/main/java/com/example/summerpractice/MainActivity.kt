@@ -13,19 +13,23 @@ class MainActivity : AppCompatActivity() {
 
         val button=findViewById<Button>(R.id.button)
         button?.setOnClickListener{
-            val name=findViewById<EditText>(R.id.name).text.toString()
-            val height = findViewById<EditText>(R.id.height).text.toString().toInt()
-            val weight = findViewById<EditText>(R.id.weight).text.toString().toFloat()
-            val age  = findViewById<EditText>(R.id.age).text.toString().toInt()
+            val name = findViewById<EditText>(R.id.name).text
+            val height = findViewById<EditText>(R.id.height).text
+            val weight = findViewById<EditText>(R.id.weight).text
+            val age  = findViewById<EditText>(R.id.age).text
             val res=findViewById<TextView>(R.id.result)
-            if(name.length<0 || name.length>50 || height<0 || height>250 || weight<0 || weight>250 || age<0 || age>150){
-                res.text="Данные введены некорректно"
+            if (name.length>0 && height.length>0 && weight.length>0 && age.length>0){
+                if(name.length<=50 && height.toString().toInt()<=250 && weight.toString().toFloat()<=250 && age.toString().toInt()<=150 && weight.toString().toFloat()>0 && height.toString().toInt()>0 && age.toString().toInt()>0){
+                    val result=(height.toString().toInt()*5)-(age.toString().toInt()*6.8)+(weight.toString().toFloat()*13.7)+name.length+66
+                    res.text="$name Ваша норма каллорий:$result"
+                }
+                else{
+                    res.text="Данные введены некорректно"
+                    //Qм = ( рост в см х 5) - ( возраст в годах х 6,8) +( вес тела в кг х13,7) + длина имени + 66 , где Qм -количество суточной нормы калорий
+                }
             }
             else{
-
-                val result=(height*5)-(age*6.8)+(weight*13.7)+66
-                res.text="$name Ваша норма каллорий:$result"
-                //Qм = ( рост в см х 5) - ( возраст в годах х 6,8) +( вес тела в кг х13,7) + 66 , где Qм -количество суточной нормы калорий
+                res.text="Значения не могут быть пустыми"
             }
         }
     }
